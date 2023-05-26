@@ -2,7 +2,7 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Auth } from "./auth.entity";
 import { IsEmail, IsString, Length } from "class-validator";
-import { defaultAvatar } from "../constants/inde";
+import { defaultAvatar } from "../constants";
 
 @Entity()
 export class User  {
