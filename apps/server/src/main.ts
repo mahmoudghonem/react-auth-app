@@ -1,21 +1,19 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
+import dotenv from 'dotenv';
+dotenv.config();
+import ExpressApp from "./modules/express";
+import { AppDataSource } from "./modules/db";
 
-import express from 'express';
-import * as path from 'path';
 
-const app = express();
+const app = ExpressApp.getInstance();
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!")
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization", err)
+  });
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to server!' });
-});
 
-const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
-});
-server.on('error', console.error);
+app.start(parseInt(process.env['PORT']!));
+

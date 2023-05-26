@@ -8,12 +8,15 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "typeRoots": ["node_modules/@types"],
     "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
