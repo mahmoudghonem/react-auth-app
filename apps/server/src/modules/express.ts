@@ -1,7 +1,6 @@
 import  express, { Application, Request, Response, NextFunction, Router } from 'express';
 import apiRoutes from '../routes';
-// import routes from '../routes';
-
+import cors from 'cors';
 class ExpressApp {
     public app: Application;
     private static instance: ExpressApp;
@@ -22,6 +21,7 @@ class ExpressApp {
 
     private middlewares(): void {
         this.app.use(express.json());
+        this.app.use(cors())
     }
 
     private routes(): void {

@@ -17,6 +17,7 @@
         "tsConfig": "apps/client/tsconfig.app.json",
         "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"],
         "styles": ["apps/client/src/styles.scss"],
+        "postcssConfig": "apps/client/postcss.config.js",
         "scripts": [],
         "isolatedConfig": true,
         "webpackConfig": "apps/client/webpack.config.js"
